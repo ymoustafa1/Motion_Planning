@@ -57,10 +57,9 @@ class PathTester:
             py = [p[1] for p in path]
             ax.plot(px, py, "-", color="limegreen", linewidth=2.0, label="Planned Path")
 
-        ax.autoscale(enable=True, axis="both")
-        ax.margins(0.15)
-        ax.legend(loc="best")
-        plt.tight_layout()
+        if handles:
+            ax.legend(loc="best")
+
         plt.show()
 
     def _draw_heading_arrow(self, ax) -> None:
